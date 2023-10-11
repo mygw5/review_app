@@ -1,0 +1,2 @@
+class Cosmentic < ApplicationRecord
+end
