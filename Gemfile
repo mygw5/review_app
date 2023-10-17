@@ -72,3 +72,5 @@ gem "rails_admin", "~> 3.0"
 gem "cancancan"
 
 gem "ransack"
+
+  gem 'carrierwave', '~> 2.0'
