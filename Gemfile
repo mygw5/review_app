@@ -73,4 +73,4 @@ gem "cancancan"
 
 gem "ransack"
 
-  gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.0'
