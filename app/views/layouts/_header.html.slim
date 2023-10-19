@@ -2,13 +2,13 @@ nav
   ul
     - if end_user_signed_in?
       li
-        = linl_to "NOTICE"
+        = linl_to "NOTICE", notice_path
       li
-        = link_to "MYPAGE"
+        = link_to "MYPAGE", mypage_path
       li
-        = link_to "COSMETIC"
+        = link_to "COSMETIC", cosmetics_path
       li
-        = link_to "LOGOUT"
+        = link_to "LOGOUT", destroy_end_user_session_path
 
     - elsif admin_signed_in?
       li
@@ -24,10 +24,10 @@ nav
 
     - else
       li
-        = link_to "ABOUT"
+        = link_to "ABOUT", about_path
       li
         = link_to "GUEST"
       li
         = link_to "SIGNUP", new_end_user_registration_path
       li
-        = link_to "LOGIN", new_end_user_registration_path
+        = link_to "LOGIN", end_user_session_path

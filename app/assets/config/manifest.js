@@ -3,3 +3,4 @@
 //= link public/homes.css
 //= link public/registrations.css
 //= link public/sessions.css
+//= link admin/sessions.css
