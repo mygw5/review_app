@@ -1,6 +1,33 @@
 nav
   ul
-    li ABOUT
-    li GUEST
-    li SIGNUP
-    li LOGIN
+    - if end_user_signed_in?
+      li
+        = linl_to "NOTICE"
+      li
+        = link_to "MYPAGE"
+      li
+        = link_to "COSMETIC"
+      li
+        = link_to "LOGOUT"
+
+    - elsif admin_signed_in?
+      li
+        = link_to "NOTICE"
+      li
+        = link_to "COSMETIC"
+      li
+        = link_to "USER"
+      li
+        = link_to "CATEGORY"
+      li
+        = link_to "LOGOUT"
+
+    - else
+      li
+        = link_to "ABOUT"
+      li
+        = link_to "GUEST"
+      li
+        = link_to "SIGNUP"
+      li
+        = link_to "LOGIN"

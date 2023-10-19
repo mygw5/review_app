@@ -10,11 +10,14 @@ html
 
     = stylesheet_link_tag params[:controller], 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+    = favicon_link_tag('')
+
   body
     header
-      =render "layouts/header"
+      = render "layouts/header"
 
     = yield
 
     footer
-      =render "layouts/footer"
+      = render "layouts/footer"
