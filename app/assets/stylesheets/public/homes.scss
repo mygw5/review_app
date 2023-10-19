@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.top_image {
+.top_image,
+.about_image {
   margin: 30px auto;
   width: 50%;
   height: 30%;
@@ -10,4 +11,8 @@
   background: #ffb6c1;
   text-align: center;
   line-height: 400px;
+}
+
+p {
+  text-align: center;
 }
