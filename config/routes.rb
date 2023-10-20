@@ -1,22 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'categories/index'
-  end
-  namespace :admin do
-    get 'notifications/notice'
-  end
-  namespace :admin do
-    get 'cosmetics/index'
-    get 'cosmetics/show'
-    get 'cosmetics/edit'
-  end
-  namespace :admin do
-    get 'homes/top'
-  end
-  namespace :public do
-    get 'notifications/notice'
-  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :admins, controllers: {
@@ -28,7 +11,12 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
+  devise_scope :end_user do
+      post "users/guest_sign_in", to: "public/users/sessions#guest_sign_in"
+  end
+
   scope module: :public do
+
     root to: "homes#top"
     get "about" => "homes#about"
     resources :cosmetics, only: [:index, :show, :edit, :create, :update, :destroy] do
