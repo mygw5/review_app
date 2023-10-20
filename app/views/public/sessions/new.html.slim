@@ -15,5 +15,7 @@ div.card
         = f.check_box :remember_me
         = f.label :remember_me
     .actions
-      = f.submit "Log in"
-  = render "public/shared/links"
+      = f.submit "ログインする"
+      br
+      | アカウント登録お済みではない方は
+      = render "public/shared/links"
