@@ -7,8 +7,6 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-
-    = stylesheet_link_tag params[:controller], 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
     = favicon_link_tag('')
@@ -17,7 +15,8 @@ html
     header
       = render "layouts/header"
 
-    = yield
+    main
+      = yield
 
     footer
       = render "layouts/footer"

@@ -3,15 +3,16 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(admin)
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
     #   can :read, :all
     #   return unless user.admin?
-    if user.try(:admin?)
-      can :access, :rails_admin
-      can :manage, :all
+
+    can :access, :rails_admin
+    can :manage, :all
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
@@ -30,6 +31,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
-    end
   end
 end
